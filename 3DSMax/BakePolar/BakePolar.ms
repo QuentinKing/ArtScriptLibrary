@@ -2,8 +2,8 @@
 
 	Bakes polar coordinates of each vertex on a mesh on to it's vertex color
 	
-	Since it's baked to vertex color, both theta and the radius is in the range [0, 1], representing the upper and lower bounds of each
-	
+	When the vizilization is saved to the vertex color, so the theta / radius is remapped to [0, 1] for clarity
+
 */
 
 (
@@ -88,7 +88,7 @@
 				else if (rdo_polarRelative.state == 3) then
 				(
 					-- Object Center of Mass
-					-- Defining as the average vertex position, which has issues but its useful for a quick bake. Can always use the other options for more control
+					-- Defining as the average vertex position, which has issues but its useful for a quick bake. Can always use the other options for more precise control
 					local t = [0, 0, 0]
 					i = 0
 					for vert in obj.mesh.verts do
