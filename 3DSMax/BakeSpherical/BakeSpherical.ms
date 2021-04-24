@@ -108,7 +108,7 @@
 					
 					local r = distance relativePoint (Point3 0 0 0)
 					local theta = (atan2 (sqrt (relativePoint.x*relativePoint.x + relativePoint.y*relativePoint.y)) relativePoint.z) / 360.0 * 2.0 * 3.14159265
-					local phi = (((atan2 relativePoint.y relativePoint.x) + 180.0) / 360.0) * 2.0 * 3.14159265
+					local phi = ((atan2 relativePoint.y relativePoint.x) / 360.0) * 2.0 * 3.14159265
 					
 					maxRadius = (amax r maxRadius)
 		
@@ -129,7 +129,7 @@
 						local phi = (polyop.getMapVert obj spn_thetaChannel.value vert)[3]
 						phi = (phi / 2.0 / 3.14159265)
 
-						polyop.setVertColor obj 0 vert (Color (radius  * 255) (theta * 255) (phi * 255) 255)
+						polyop.setVertColor obj 0 vert (Color (radius * 255) (theta * 255) (phi * 255) 255)
 					)
 				)
 				
