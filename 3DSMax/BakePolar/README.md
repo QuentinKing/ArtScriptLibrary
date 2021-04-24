@@ -1,4 +1,18 @@
-Bakes polar coordinates of the 3D to a specific vertex channel. Useful for reading this data in a shader to produce visual effects.
+Bakes polar coordinates of the 3D mesh to a specific vertex channel. Useful for reading this data in a shader to produce visual effects.
+
+Calculated as:
+
+- x = r * cos(theta)
+
+- y = r * sin(theta)
+
+- (Note that x and y varies due to what axis you bake around)
+
+- The radius is baked into the .x coordiante of the vertex channel
+
+- The theta is baked into the .y coordinate of the vertex channel
+
+- Theta is in the range [0, 2PI] and is in radians
 
 
 **Around Axis**
@@ -26,4 +40,4 @@ Bakes polar coordinates of the 3D to a specific vertex channel. Useful for readi
   
   -> Remaps the theta and radius to (0-255) and saves the result in the vertex color. Useful for checking if the result is what you expect.
 
-![image](https://user-images.githubusercontent.com/16472643/115100649-ed529100-9f0b-11eb-96b4-d7028e0c9ae0.png)
+![image](https://user-images.githubusercontent.com/16472643/115941720-9cdfb400-a474-11eb-9373-90f294843ea2.png)
