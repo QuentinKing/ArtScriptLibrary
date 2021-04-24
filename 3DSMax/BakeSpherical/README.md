@@ -3,8 +3,11 @@ Bakes spherical coordinates of the 3D mesh to a specific vertex channel. Useful 
 The coordinates are defined where
 
 x = r * cos(phi) * sin(theta)
+
 y = r * sin(phi) * sin(theta)
+
 z = r * cos(theta)
+
 
 r is baked to the .x coordinate of the vertex channel
 theta is baked to the .y coordinate of the vertex channel
