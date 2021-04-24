@@ -120,7 +120,7 @@
 					
 					local yDiff = polarY - refPolarY
 					local xDiff = polarX - refPolarX
-					local theta = (((atan2 yDiff xDiff) + 180.0) / 360.0) * 2.0 * 3.14159265 -- atan2 is in degrees cause autodesk hates math, and goes from -180 to 180
+					local theta = ((atan2 yDiff xDiff) / 360.0) * 2.0 * 3.14159265 -- atan2 is in degrees cause autodesk hates math, and goes from -180 to 180
 					local radius = (distance [polarX, polarY, 0] [refPolarX, refPolarY, 0])
 					
 					maxRadius = (amax radius maxRadius)
@@ -139,7 +139,7 @@
 						local radius = (polyop.getMapVert obj spn_thetaChannel.value vert)[2]
 						radius = (radius / maxRadius)
 						
-						polyop.setVertColor obj 0 vert (Color (theta*255) (radius*255) 0 255)
+						polyop.setVertColor obj 0 vert (Color (radius*255) (theta*255) 0 255)
 					)
 				)
 				
